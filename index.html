@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <!--
+            Практичне завдання 2.
+        Зробити форму із полями обов’язковими для
+    заповнення:
+        ➢ Ім’я
+        ➢ Прізвище
+        ➢ Вибір статі (радіо, в залежності від обраної статі
+    змінити фоновий колір сторіночки)
+        ➢ Телефонний номер(перевірити на правильність
+    вводу)
+        ➢ Нік (має містити одну велику літеру, знак
+    підкреслення, і 3 цифри наприкінці)
+    Якщо якісь дані були введені не правильно,
+    користувачу відображається червоненька підказка.
+    -->
+
+    <head>
+        <title>Task of practice 2: form.</title>
+        <style type="text/css">
+            body{
+                background: blue;
+            }
+            input[type="radio"]:checked {
+                background: green;
+            }
+
+            input[type="radio"]:checked {
+                background: hotpink;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="index.html">
+            <fieldset>
+                <legend>Your information:</legend>
+                Name <input type="text" name="name_user" value="" placeholder="Your name" autofocus required><br><br>
+                Family <input type="text" name="family_user" value="" placeholder="Your family" required><br><br>
+                Sex
+                <input type="radio" name="sex" id="m" required> Man
+                <input type="radio" name="sex" id="w"> Woman<br><br>
+                Tel. number <input type="tel" name="tel_user" value="" placeholder="0123456789" required
+                      pattern="[0-9]{10}" title = "Має містити лише цифри"><br><br>
+                Nickname <input type="text" name="nick_user" value="" placeholder="Your nick" required min="5"
+                      pattern="[A-Z]{1}[_][0-9]{3}"><br><br>
+                <input type="reset" value="Reset">
+                <input type="button" value="Save">
+            </fieldset>
+        </form>
+    </body>
+
+
+
+
