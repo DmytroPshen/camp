@@ -26,6 +26,14 @@
         public $lastName;
         public $group;
         public $Mark;
+
+        public function __construct($fName, $lName, $g, $m){
+            $this->firstName = $fName;
+            $this->lastName = $lName;
+            $this->group = $g;
+            $this->Mark = $m;
+        }
+
         function getScholarship(){
             if($this->Mark == 5){
                 return 100;
@@ -37,7 +45,15 @@
     }
 
     class Aspirant extends Student{
-        public $isScienceWork = true;
+        public $isScienceWork;
+
+        public function __construct($fName, $lName, $g, $m, $isw = true){
+            $this->firstName = $fName;
+            $this->lastName = $lName;
+            $this->group = $g;
+            $this->Mark = $m;
+            $this->isScienceWork = $isw;
+        }
 
         function getScholarship(){
             if($this->Mark == 5){
@@ -48,3 +64,15 @@
             }
         }
     }
+
+    $students = array(
+        $student1 = new Student('Igor', 'Kovalenko', 'management', 5),
+        $student2 = new Student('Oleg', 'Vovk', 'engineering', 4),
+        $aspirant1 = new Aspirant('Mykola', 'Kovalenko', 'engineering', 4, true),
+        $aspirant2 = new Aspirant('Denis', 'Poroh', 'management', 5, true)
+    );
+
+    foreach ($students as $st){
+        $st->getScholarship();
+    }
+
