@@ -40,7 +40,19 @@
     }
 
     class Veterenar{
-        function threadAnimal($animal): void {
-
+        function threadAnimal(Animal $animal): void {
+            $animal->makeNoise();
+            $animal->food;
+            $animal->location;
         }
     }
+
+    $arrayAnimals =
+        [$animal_0 = new Dog(),
+        $animal_1 = new Cat(),
+        $animal_2 = new Horse()];
+
+        for($i = 0; $i < 3; $i++){
+            $vet = new Veterenar();
+            $vet->threadAnimal($arrayAnimals[$i]);
+        }
